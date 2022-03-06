@@ -25,7 +25,7 @@ function Login() {
 
         salvaEmail(email);
 
-        window.location.href = "http://localhost:3000/dashboard";
+        //window.location.href = "http://localhost:3000/dashboard";
 
         return <Navigate to="/dashboard" />;
 
