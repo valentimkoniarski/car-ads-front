@@ -51,7 +51,7 @@ const Rota = () => (
         element={!isAuthenticated() ? <Private /> : <Login />}
       ></Route>
       <Route
-        path="/dashboard"
+        path="/car-ads-front/dashboard"
         element={!isAuthenticated() ? <Private /> : <Dashboard />}
       ></Route>
       <Route
