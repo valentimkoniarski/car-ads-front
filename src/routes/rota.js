@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import PrivateRoute from "../services/PrivateRoute";
 
@@ -35,7 +35,7 @@ function Logout() {
 }
 
 const Rota = () => (
-  <BrowserRouter>
+  <HashRouter>
     <Routes>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/register" element={<Register />}></Route>
@@ -73,7 +73,7 @@ const Rota = () => (
 
       <Route path="/logout" element={<Logout />} />
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 export default Rota;
