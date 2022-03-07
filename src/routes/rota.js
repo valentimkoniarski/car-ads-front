@@ -23,7 +23,6 @@ import "../styles.css";
 
 import "react-pro-sidebar/dist/css/styles.css";
 
-
 function Private() {
   if (!isAuthenticated()) {
     return <Navigate to="/login" />;
@@ -40,7 +39,7 @@ const Rota = () => (
     <Routes>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/register" element={<Register />}></Route>
-      <Route path="/homepage" element={<HomePage />}></Route>
+      <Route path="/" element={<HomePage />}></Route>
 
       <Route
         path="/login"
@@ -54,10 +53,7 @@ const Rota = () => (
         path="/car-ads-front/dashboard"
         element={!isAuthenticated() ? <Private /> : <Dashboard />}
       ></Route>
-      <Route
-        path="/homepage/veiculos/:id"
-        element={ <ShowCar />}
-      ></Route>
+      <Route path="/homepage/veiculos/:id" element={<ShowCar />}></Route>
       <Route
         path="/main"
         element={!isAuthenticated() ? <Private /> : <Main />}
