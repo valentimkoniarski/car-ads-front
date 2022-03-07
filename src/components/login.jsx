@@ -27,8 +27,9 @@ function Login() {
 
         //window.location.href = "http://localhost:3000/dashboard";
 
-        return <Navigate to="/dashboard" />;
+        console.log("Login realizado com sucesso");
 
+        history.push("/dashboard");
       })
 
       .catch((error) => {
