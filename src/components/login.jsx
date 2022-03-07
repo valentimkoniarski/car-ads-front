@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 import api from "../services/Api";
@@ -25,11 +25,7 @@ function Login() {
 
         salvaEmail(email);
 
-        //window.location.href = "http://localhost:3000/dashboard";
-
-        console.log("Login realizado com sucesso");
-
-        history.push("/dashboard");
+        window.location.href = "http://valentimkoniarski.github.io/car-ads-front/dashboard";
       })
 
       .catch((error) => {
