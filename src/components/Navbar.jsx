@@ -58,7 +58,7 @@ function Navbar() {
             }}
           >
             <Box>
-              <Link to="/homepage">
+              <Link to="/">
                 <Button color="inherit">CAR-ADS</Button>
               </Link>
             </Box>

@@ -38,9 +38,8 @@ const Rota = () => (
   <HashRouter>
     <Routes>
       <Route path="/login" element={<Login />}></Route>
-      <Route path="/" element={<Login />}></Route>
       <Route path="/register" element={<Register />}></Route>
-      <Route path="/homepage" element={<HomePage />}></Route>
+      <Route path="/" element={<HomePage />}></Route>
 
       <Route
         path="/login"
