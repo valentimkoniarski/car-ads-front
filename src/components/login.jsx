@@ -25,7 +25,7 @@ function Login() {
 
         salvaEmail(email);
 
-        window.location.href = "http://valentimkoniarski.github.io/car-ads-front/dashboard";
+        window.location.href = "http://valentimkoniarski.github.io/car-ads-front/#/anuncios";
       })
 
       .catch((error) => {

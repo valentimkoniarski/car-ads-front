@@ -35,7 +35,6 @@ import { getUserId } from "../../services/auth";
 
 import Aside from "../Aside";
 
-
 function AddVehicles() {
   const [brands, setBrands] = useState([{}]);
   const [brand, setBrand] = useState("");
@@ -464,7 +463,9 @@ function AddVehicles() {
                     <div>
                       <input {...getInputProps()} />
                       <p>
-                        Drag 'n' drop some files here, or click to select files
+                        Arraste as imagens para aqui ou clique para selecionar
+                        <br />
+                        (Apenas duas são permitidas até o momento :/ )
                       </p>
                     </div>
                     <aside style={thumbsContainer}>{thumbs}</aside>

@@ -30,7 +30,7 @@ export default function Aside() {
         <Menu>
           <MenuItem icon={<FaHome />}>
             <Link
-              to="/homepage"
+              to="/"
               style={{ textDecoration: "none", color: "whitesmoke" }}
             >
               HomePage

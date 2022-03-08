@@ -311,6 +311,9 @@ function EditVehicles() {
           if (todasMarcas.nome == response.data.marca) {
             setBrand(todasMarcas.codigo);
 
+            setDescription(response.data.descricao);
+            setPrice(response.data.preco);
+
             axios
               .get(
                 `https://parallelum.com.br/fipe/api/v1/carros/marcas/${todasMarcas.codigo}/modelos`

@@ -35,7 +35,7 @@ function Register() {
       .post("/auth/register", { nome, email, senha })
       .then((response) => {
         login(response.data.token);
-        window.location.href = "http://localhost:3000/login";
+        window.location.href = "http://valentimkoniarski.github.io/car-ads-front/#/login";
       });
   };
 
