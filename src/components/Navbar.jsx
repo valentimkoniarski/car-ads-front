@@ -58,7 +58,12 @@ function Navbar() {
             }}
           >
             <Box>
-              <Link to="/">
+              <Link
+                to="/"
+                style={{
+                  textDecoration: "none",
+                }}
+              >
                 <Button color="inherit">CAR-ADS</Button>
               </Link>
             </Box>

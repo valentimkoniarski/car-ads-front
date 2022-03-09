@@ -70,7 +70,7 @@ function ShowCar() {
                 <img
                   style={{
                     width: "1200px",
-                    height: "400px",
+                    height: "650px",
                     objectFit: "cover",
                     display: "block",
                     margin: "auto",

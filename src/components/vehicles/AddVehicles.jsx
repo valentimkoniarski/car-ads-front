@@ -314,7 +314,7 @@ function AddVehicles() {
       console.log(response);
       alert("Veículo cadastrado com sucesso!");
 
-      window.location.href = "/anuncios";
+      window.location.href = "http://valentimkoniarski.github.io/car-ads-front/#/anuncios";
     });
   };
 
@@ -328,7 +328,7 @@ function AddVehicles() {
           width: "100%",
           padding: "0",
           margin: "0",
-          marginTop: "2rem",
+          marginTop: "70px",
         }}
       >
         <form onSubmit={handleCreate}>
@@ -470,9 +470,9 @@ function AddVehicles() {
                     </div>
                     <aside style={thumbsContainer}>{thumbs}</aside>
                     <aside>
-                      <h4>Accepted files</h4>
+                      <h4>Arquivos aceitos</h4>
                       <ul>{acceptedFileItems}</ul>
-                      <h4>Rejected files</h4>
+                      <h4>Arquivos rejeitados</h4>
                       <ul>{fileRejectionItems}</ul>
                     </aside>
                   </Box>
