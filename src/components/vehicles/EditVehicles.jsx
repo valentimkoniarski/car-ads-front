@@ -307,7 +307,14 @@ function EditVehicles() {
       if (!brand) {
         const response = await api.get(`veiculos/home/${id}`);
 
-        console.log(response.data);
+        console.log(response.data.fotos[0]);
+
+        /* response.data.fotos.map((photo) => {
+          setPhotos1(photo.fotos);
+          setPhotos1(photo.fotos);
+        }); */
+
+
 
         brands.forEach((todasMarcas) => {
           if (todasMarcas.nome == response.data.marca) {
