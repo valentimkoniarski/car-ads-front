@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/car-ads-front/static/css/main.6fab3ae7.css",
-    "main.js": "/car-ads-front/static/js/main.53c94993.js",
+    "main.js": "/car-ads-front/static/js/main.3071f07b.js",
     "index.html": "/car-ads-front/index.html",
     "main.6fab3ae7.css.map": "/car-ads-front/static/css/main.6fab3ae7.css.map",
-    "main.53c94993.js.map": "/car-ads-front/static/js/main.53c94993.js.map"
+    "main.3071f07b.js.map": "/car-ads-front/static/js/main.3071f07b.js.map"
   },
   "entrypoints": [
     "static/css/main.6fab3ae7.css",
-    "static/js/main.53c94993.js"
+    "static/js/main.3071f07b.js"
   ]
 }
