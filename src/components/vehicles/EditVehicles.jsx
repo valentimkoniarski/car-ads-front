@@ -53,6 +53,8 @@ function EditVehicles() {
   const [photos3, setPhotos3] = useState("");
   const [photos4, setPhotos4] = useState("");
 
+  console.log(photos1);
+
   const [loading, setLoading] = useState(false);
 
   const [dataVehicle, setDataVehicle] = useState({});
