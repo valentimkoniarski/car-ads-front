@@ -307,21 +307,14 @@ function EditVehicles() {
       if (!brand) {
         const response = await api.get(`veiculos/home/${id}`);
 
-        console.log(response.data.fotos[0]);
-
-        /* response.data.fotos.map((photo) => {
-          setPhotos1(photo.fotos);
-          setPhotos1(photo.fotos);
-        }); */
-
-
-
         brands.forEach((todasMarcas) => {
           if (todasMarcas.nome == response.data.marca) {
             setBrand(todasMarcas.codigo);
 
             setDescription(response.data.descricao);
             setPrice(response.data.preco);
+            setPhotos1(response.data.fotos[0]);
+            setPhotos2(response.data.fotos[1]);
 
             axios
               .get(
@@ -554,6 +547,9 @@ function EditVehicles() {
                 </Grid>
               </Grid>
               <Grid container spacing={10}>
+                <Grid item xs={10}></Grid>
+              </Grid>
+              <Grid container spacing={10}>
                 <Grid item xs={10}>
                   <Box
                     sx={{ width: "100%" }}
@@ -585,7 +581,12 @@ function EditVehicles() {
                         (Apenas duas são permitidas até o momento :/ )
                       </p>
                     </div>
-                    <aside style={thumbsContainer}>{thumbs}</aside>
+                    <aside style={thumbsContainer}>
+                      {thumbs}
+
+                      <img src={photos1} alt="thumb" />
+                      <img src={photos2} alt="thumb" />
+                    </aside>
                     <aside>
                       <h4>Arquivos aceitos</h4>
                       <ul>{acceptedFileItems}</ul>
