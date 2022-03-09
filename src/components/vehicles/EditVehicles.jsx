@@ -53,8 +53,6 @@ function EditVehicles() {
   const [photos3, setPhotos3] = useState("");
   const [photos4, setPhotos4] = useState("");
 
-  console.log(photos1);
-
   const [loading, setLoading] = useState(false);
 
   const [dataVehicle, setDataVehicle] = useState({});
@@ -315,8 +313,8 @@ function EditVehicles() {
 
             setDescription(response.data.descricao);
             setPrice(response.data.preco);
-            setPhotos1(response.data.fotos[0]);
-            setPhotos2(response.data.fotos[1]);
+            setPhotos1(response.data.fotos[0].fotos);
+            setPhotos2(response.data.fotos[1].fotos);
 
             axios
               .get(
