@@ -348,6 +348,7 @@ function EditVehicles() {
             )
             .then((response) => {
               console.log(response);
+              console.log(`https://parallelum.com.br/fipe/api/v1/carros/marcas/${brand}/modelos/${todosModelos.codigo}/anos`);
               setYears(response.data);
             })
             .catch((error) => {
