@@ -584,8 +584,8 @@ function EditVehicles() {
                     <aside style={thumbsContainer}>
                       {thumbs}
 
-                      <img style={thumbsContainer} src={photos1} alt="thumb" />
-                      <img style={thumbsContainer} src={photos2} alt="thumb" />
+                      <img width="200px" src={photos1} alt="thumb" />
+                      <img width="200px" src={photos2} alt="thumb" />
                     </aside>
                     <aside>
                       <h4>Arquivos aceitos</h4>
