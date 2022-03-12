@@ -53,7 +53,18 @@ function HomePage() {
         marginTop="50px"
       >
         {loadingApi ? (
-          <CircularProgress />
+          <CircularProgress
+            size="100px"
+            thickness="5px"
+            color="secondary"
+            /*CENTRALIZAR*/
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          />
         ) : (
           <ImageList
             cols={3}
