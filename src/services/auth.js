@@ -23,9 +23,14 @@ export const logout = () => {
   localStorage.removeItem(USER_KEY);
 };
 
-if (!isAuthenticated()) {
-  logout();
-}
+// REMOVE O TOKEN DEPOIS DE  20 MINUTOS
+const setTokenExpiration = () => {
+  setTimeout(() => {
+    logout();
+  }, 1000 * 60 * 20); // converte de milisegundos para segundos = 20 minutos
+};
+
+setTokenExpiration();
 
 export const salvaEmail = (email) => {
   localStorage.setItem(EMAIL_KEY, email);

@@ -35,7 +35,8 @@ function Register() {
       .post("/auth/register", { nome, email, senha })
       .then((response) => {
         login(response.data.token);
-        window.location.href = "http://valentimkoniarski.github.io/car-ads-front/#/login";
+        window.location.href =
+          "http://valentimkoniarski.github.io/car-ads-front/#/login";
       });
   };
 
@@ -128,7 +129,7 @@ function Register() {
         </Link>
 
         {erros.length > 0 && (
-          <Alert severity="error">
+          <Alert severity="error" style={{ marginTop: "25px" }}>
             <ul>
               {erros.map((erro) => (
                 <li key={erro}>{erro}</li>

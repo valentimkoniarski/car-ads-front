@@ -13,7 +13,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const [errosSenha, setErrosSenha] = useState([]);
+  const [erros, setErros] = useState([]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -25,14 +25,15 @@ function Login() {
 
         salvaEmail(email);
 
-        window.location.href = "http://valentimkoniarski.github.io/car-ads-front/#/anuncios";
+        window.location.href =
+          "http://valentimkoniarski.github.io/car-ads-front/#/anuncios";
       })
 
       .catch((error) => {
-        if (error.response.status === 400) {
-          setErrosSenha(["Senha incorreta"]);
+        if (error.response.status != 200 || error.response.status != 201) {
+          setErros(["Senha ou Login incorretos"]);
         } else {
-          setErrosSenha([]);
+          setErros([]);
         }
       });
   };
@@ -103,6 +104,16 @@ function Login() {
             Cadastrar
           </Button>
         </Link>
+
+        {erros.length > 0 && (
+          <Alert severity="error" style={{ marginTop: "25px" }}>
+            <ul>
+              {erros.map((erro) => (
+                <li key={erro}>{erro}</li>
+              ))}
+            </ul>
+          </Alert>
+        )}
       </form>
     </Container>
   );

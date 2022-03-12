@@ -55,14 +55,9 @@ function HomePage() {
         {loadingApi ? (
           <CircularProgress
             size="100px"
-            thickness="5px"
             color="secondary"
-            /*CENTRALIZAR*/
             style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
+              margin: "0 auto",
             }}
           />
         ) : (
