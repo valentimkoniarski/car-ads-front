@@ -7,12 +7,16 @@ import Navbar from "./Navbar";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 import api from "../services/Api";
 
 function HomePage() {
   const [anuncios, setAnuncios] = useState([{}]);
   const [fotos, setFotos] = useState([]);
+
+  const [loadingApi, setLoadingApi] = useState(true);
 
   const carregar = async () => {
     const response = await api.get("/veiculos/home");
@@ -29,6 +33,8 @@ function HomePage() {
         setFotos((fotos) => [...fotos, obj]);
       });
     });
+
+    setLoadingApi(false);
   };
 
   useEffect(() => {
@@ -38,66 +44,81 @@ function HomePage() {
   return (
     <>
       <Navbar />
-      <ImageList
-        cols={3}
-        rowHeight={164}
-        sx={{ width: 1000 }}
-        style={{
-          margin: "auto",
-          overflow: "hidden",
-          padding: "50px",
-        }}
+
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        marginTop="50px"
       >
-        {anuncios.map((anuncio) => (
-          <div key={anuncio.id} style={{ padding: "40px" }}>
-            <Link
-              to={`/homepage/veiculos/${anuncio.id}`}
-              key={anuncio.id}
-              style={{ marginTop: "25px", textDecoration: "none" }}
-            >
-              <ImageListItem
-                key={anuncio.id}
-                style={{
-                  width: "100%",
-                  height: "100%",
-
-                  overflow: "hidden",
-                  borderRadius: "10px",
-                }}
-              >
-                {fotos.map((foto) => {
-                  if (
-                    foto.veiculo_id === anuncio.id &&
-                    foto.principal === true
-                  ) {
-                    return <img height="100" src={foto.fotos} loading="lazy" />;
-                  }
-                })}
-
-                <div
-                  style={{
-                    backgroundColor: "#4f92ff",
-                  }}
+        {loadingApi ? (
+          <CircularProgress />
+        ) : (
+          <ImageList
+            cols={3}
+            rowHeight={164}
+            sx={{ width: 1000 }}
+            style={{
+              margin: "auto",
+              overflow: "hidden",
+              padding: "50px",
+            }}
+          >
+            {anuncios.map((anuncio) => (
+              <div key={anuncio.id} style={{ padding: "40px" }}>
+                <Link
+                  to={`/homepage/veiculos/${anuncio.id}`}
+                  key={anuncio.id}
+                  style={{ marginTop: "25px", textDecoration: "none" }}
                 >
-                  <ImageListItemBar
+                  <ImageListItem
+                    key={anuncio.id}
                     style={{
-                      padding: "10px",
+                      width: "100%",
+                      height: "100%",
+
+                      overflow: "hidden",
+                      borderRadius: "10px",
                     }}
-                    title={anuncio.marca}
-                    subtitle={
-                      <div>
-                        <div>{anuncio.descricao}</div>
-                        <div>{anuncio.preco}</div>
-                      </div>
-                    }
-                    position="below"
-                  />
-                </div>
-              </ImageListItem>
-            </Link>
-          </div>
-        ))}
-      </ImageList>
+                  >
+                    {fotos.map((foto) => {
+                      if (
+                        foto.veiculo_id === anuncio.id &&
+                        foto.principal === true
+                      ) {
+                        return (
+                          <img height="100" src={foto.fotos} loading="lazy" />
+                        );
+                      }
+                    })}
+
+                    <div
+                      style={{
+                        backgroundColor: "#4f92ff",
+                      }}
+                    >
+                      <ImageListItemBar
+                        style={{
+                          padding: "10px",
+                        }}
+                        title={anuncio.marca}
+                        subtitle={
+                          <div>
+                            <div>{anuncio.descricao}</div>
+                            <div>{anuncio.preco}</div>
+                          </div>
+                        }
+                        position="below"
+                      />
+                    </div>
+                  </ImageListItem>
+                </Link>
+              </div>
+            ))}
+          </ImageList>
+        )}
+      </Box>
     </>
   );
 }
