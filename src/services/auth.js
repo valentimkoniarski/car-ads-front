@@ -23,6 +23,8 @@ export const logout = () => {
   localStorage.removeItem(USER_KEY);
 };
 
+window.addEventListener("beforeunload", logout);
+
 export const salvaEmail = (email) => {
   localStorage.setItem(EMAIL_KEY, email);
 };
