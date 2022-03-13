@@ -45,22 +45,23 @@ function HomePage() {
     <>
       <Navbar />
 
-      <Box
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        marginTop="50px"
-      >
-        {loadingApi ? (
-          <CircularProgress
-            size="100px"
-            color="secondary"
-            style={{
-              margin: "0 auto",
-            }}
-          />
-        ) : (
+      {loadingApi ? (
+        <CircularProgress
+          size="100px"
+          color="secondary"
+          style={{
+            margin: "auto",
+            display: "block",
+          }}
+        />
+      ) : (
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          marginTop="50px"
+        >
           <ImageList
             cols={3}
             rowHeight={164}
@@ -123,8 +124,8 @@ function HomePage() {
               </div>
             ))}
           </ImageList>
-        )}
-      </Box>
+        </Box>
+      )}
     </>
   );
 }
